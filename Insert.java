@@ -8,7 +8,6 @@ public class Insert{
 			Scanner sc = new Scanner(System.in);
 			System.out.print("원하는 쿼리를 입력하세요: ");
 			String pstmt =sc.nextLine(); //String형 입력 및 반환 (개행을 기준으로 한 줄을 읽음)
-
 			
 			Class.forName("com.mysql.cj.jdbc.Driver"); 
 			Connection con=DriverManager.getConnection(
@@ -19,7 +18,6 @@ public class Insert{
 			Statement stmt=con.createStatement(); 
 			
 			int rs=stmt.executeUpdate(pstmt); 
-			
 		
 			PreparedStatement pstm = null;
 			
