@@ -48,7 +48,7 @@ public class Test
 					break;
 				case "3":
 					System.out.println("검색입니다.");
-					Search search = new Search();
+					Search search = new Search(); 
 					search.excute();
 					break;
 			
