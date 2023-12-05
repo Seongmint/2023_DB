@@ -23,7 +23,6 @@ public class Delete{
 			Statement stmt2=con.createStatement(); 
 			int rs2=stmt2.executeUpdate(pstmt2); 
 			
-		
 			PreparedStatement pstm2 = null;
 			
 			try {
