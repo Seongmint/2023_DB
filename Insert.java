@@ -1,47 +1,51 @@
+import java.util.Scanner;
 import java.util.*;
-import java.sql.*;
-
-public class Insert{
-	public void excute() {
+import java.sql.*; 
+public class Insert
+{
 	
-		try{ 
-			Scanner sc = new Scanner(System.in);
-			System.out.print("원하는 쿼리를 입력하세요: ");
-			String pstmt =sc.nextLine(); //String형 입력 및 반환 (개행을 기준으로 한 줄을 읽음)
-			
-			Class.forName("com.mysql.cj.jdbc.Driver"); 
-			Connection con=DriverManager.getConnection(
-			"jdbc:mysql://192.168.56.101:4567/centerDB",
-			"seongmin","minminseong!!"); 
-			
-			//사용자로부터 입력받기
-			Statement stmt=con.createStatement(); 
-			
-			int rs=stmt.executeUpdate(pstmt); 
+	public static void excute()
+	{ 
 		
-			PreparedStatement pstm = null;
 			
-			try {
-				if(rs>0) {
-					System.out.println("입력 성공");
+			Scanner sc = new Scanner(System.in); // Scanner 객체 생성
+			
+			while(true) {
+				System.out.println();
+				System.out.println("1.program 2.program_date 3.customer 4.priority_order 5.score 6.takes 7.teacher 8.뒤로가기");
+				System.out.print("원하는 테이블 번호를 선택하세요 : ");
+			
+				String str = sc.next();
+			
+				switch(str) {
+				case "1":
+					System.out.println("program 테이블입니다.");
+					Insert_program insert_program = new Insert_program();
+					insert_program.excute();
+					break;
+				case "2":
+					System.out.println("program_date 테이블입니다.");
+					Insert_program_date insert_program_date = new Insert_program_date();
+					insert_program_date.excute();
+					break;
+				case "8":
+					System.out.println("뒤로가기 입니다.");
+					Test test = new Test();
+					test.main(null);
+					break;
 					
-				}else {
-					System.out.println("완전한 삽입문이 아닙니다.");
+				
+				default:
+					System.out.println("잘못 입력하셨습니다.");
+					System.out.println();
+					break;
 				}
-			}catch (Exception e) {
-                System.out.println(e);
-            } finally {
-            	if (pstm != null) {
-                    pstm.close();
-                }
-                
-            }
+			}
+		
+		
+		
+	
+		}
 
-            con.close();
-        } catch (Exception e) {
-            System.out.println(e);
-            System.out.println();
-			System.out.print("사유 : " + e.getMessage());
-        }
-    }
-}
+
+	}
