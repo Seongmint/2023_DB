@@ -39,7 +39,7 @@ public class Test
 				case "1":
 					System.out.println("삽입입니다.");
 					Insert insert = new Insert();
-					insert.excute();
+					Insert.excute();
 					break;
 				case "2":
 					System.out.println("삭제입니다.");
@@ -48,7 +48,7 @@ public class Test
 					break;
 				case "3":
 					System.out.println("검색입니다.");
-					Search search = new Search(); 
+					Search search = new Search();
 					search.excute();
 					break;
 			
@@ -58,9 +58,6 @@ public class Test
 					break;
 				}
 			}
-		
-		
-		
 	
 		}
 	}
