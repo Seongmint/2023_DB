@@ -37,7 +37,6 @@ public class Search{
 				
 			}
 				
-			
 			con.close(); 
 			}catch(Exception e){ System.out.println(e);
 			System.out.println();
